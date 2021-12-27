@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gateway-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /date-service1/*
+        backend:
+          serviceName: date-service1
+          servicePort: 8000          
+      - path: /date-consume/*
+        backend:
+          serviceName: date-consume
+          servicePort: 8200
