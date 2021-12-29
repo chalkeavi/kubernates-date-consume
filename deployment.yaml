@@ -22,12 +22,12 @@ spec:
         app: date-consume
     spec:
       containers:
-      - image: chalkeavi6/date-consume:0.0.6-SNAPSHOT #CHANGE
+      - image: chalkeavi6/date-consume:0.0.11-SNAPSHOT #CHANGE
         imagePullPolicy: IfNotPresent
         name: date-consume
-        env:
-          - name: DATE_SERVICE_URI
-            value: http://date-service1
+        #env:
+         # - name: DATE_SERVICE_URI
+          #  value: http://date-service1
 #          - name: SPRING_PROFILES_ACTIVE
 #            value: kubernetes
       restartPolicy: Always
